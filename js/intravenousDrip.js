@@ -19,12 +19,18 @@ var intravenousDrip = /** @class */ (function () {
         var a = this.adult / 60;
         return Math.floor(a * 3);
     };
+    intravenousDrip.prototype.idAdultD = function () {
+        return this.adult;
+    };
     intravenousDrip.prototype.idChild = function () {
         return Math.floor(this.child);
     };
     intravenousDrip.prototype.idChildS = function () {
         var b = this.child / 60;
         return Math.floor(b * 3);
+    };
+    intravenousDrip.prototype.idChildD = function () {
+        return this.child;
     };
     return intravenousDrip;
 }());
@@ -40,12 +46,16 @@ function exec() {
     var ask = new intravenousDrip(r.get('ml'), r.get('m'));
     var resultAdult = ask.idAdult();
     var resultAdultS = ask.idAdultS();
-    var resultChild = ask.idChild();
-    var resultChildS = ask.idChildS();
+    var resultAdultD = ask.idAdultD();
     r.set('reAdult', '１分あたり' + resultAdult + '滴です。');
     r.set('reAdultS', '３秒あたり' + resultAdultS + '滴です。');
+    r.set('reAdultD', resultAdultD);
+    var resultChild = ask.idChild();
+    var resultChildS = ask.idChildS();
+    var resultChildD = ask.idChildD();
     r.set('reChild', '１分あたり' + resultChild + '滴です。');
     r.set('reChildS', '３秒あたり' + resultChildS + '滴です。');
+    r.set('reChildD', resultChildD);
 }
 r.on({
     enter: function (e) {
