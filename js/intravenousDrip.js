@@ -4,6 +4,7 @@
 // 以下やりたいこと
 // 結果を表示する際、小数点以下を切り捨て
 // 分と時間をプル選択できるようにする
+// r.set内を改行できる？？
 var intravenousDrip = /** @class */ (function () {
     function intravenousDrip(infusion, time) {
         this.infusion = infusion;
@@ -12,18 +13,18 @@ var intravenousDrip = /** @class */ (function () {
         this.child = this.infusion / this.time * 60;
     }
     intravenousDrip.prototype.idAdult = function () {
-        return this.adult;
+        return Math.round(this.adult);
     };
     intravenousDrip.prototype.idAdultS = function () {
         var a = this.adult / 60;
-        return a * 3;
+        return Math.round(a) * 3;
     };
     intravenousDrip.prototype.idChild = function () {
-        return this.child;
+        return Math.round(this.child);
     };
     intravenousDrip.prototype.idChildS = function () {
         var b = this.child / 60;
-        return b * 3;
+        return Math.round(b) * 3;
     };
     return intravenousDrip;
 }());

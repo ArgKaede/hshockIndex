@@ -23,21 +23,21 @@ class intravenousDrip{
     }
     
     idAdult(){
-        return this.adult ;
+        return Math.round(this.adult) ;
     }
 
     idAdultS(){
         var a = this.adult / 60 ;
-        return a * 3 ;
+        return Math.round(a) * 3 ;
     }
 
     idChild(){
-        return this.child ;
+        return Math.round(this.child) ;
     }
 
     idChildS(){
         var b = this.child / 60 ;
-        return b * 3 ;
+        return Math.round(b) * 3 ;
     }
 }
 
