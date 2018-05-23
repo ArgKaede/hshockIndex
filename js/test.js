@@ -9,9 +9,10 @@ var health = /** @class */ (function () {
         this.patient = p;
         this.heartRate = h;
         this.systolicBloodPressure = s;
+        this.hs = this.heartRate / this.systolicBloodPressure;
     }
     health.prototype.hshockIndex = function () {
-        var a = this.heartRate / this.systolicBloodPressure;
+        var a = this.hs;
         if (a < 1.0) {
             return '正常値です。';
         }
@@ -24,6 +25,9 @@ var health = /** @class */ (function () {
         else if (a >= 2.0) {
             return '重度の異常値です。';
         }
+    };
+    health.prototype.shValue = function () {
+        return this.hs;
     };
     return health;
 }());
@@ -39,7 +43,8 @@ var r = new Ractive({
     data: {
         n: 'sagaru',
         hr: 60,
-        sbp: 100
+        sbp: 100,
+        shv: 0
     }
 });
 function exec() {
@@ -47,6 +52,8 @@ function exec() {
     var result = sagaru.hshockIndex();
     // ractiveの変数reにresultを代入
     r.set('re', r.get('n') + 'さんのショックインデックス値は' + result);
+    var value = sagaru.shValue();
+    r.set('shv', value);
 }
 // イベント設定
 // .on...基本的にbuttonを押された時に実行
