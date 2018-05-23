@@ -15,15 +15,17 @@ class health {
     patient : string ;
     heartRate : number ;
     systolicBloodPressure : number ;
+    hs : number ;
 
     constructor(p : string , h : number,s : number){
         this.patient = p ;
         this.heartRate = h ;
         this.systolicBloodPressure = s ;
+        this.hs = this.heartRate / this.systolicBloodPressure ;
     }
 
     hshockIndex(){
-        var a = this.heartRate / this.systolicBloodPressure ;
+        var a = this.hs ;
         if( a < 1.0 ){
             return '正常値です。';
         }else if( a < 1.5 ){
@@ -33,6 +35,10 @@ class health {
         }else if( a >= 2.0){
             return '重度の異常値です。';
         }
+    }
+
+    shValue(){
+        return this.hs ;
     }
 }
 
@@ -49,7 +55,8 @@ var r = new Ractive({
     data : {
         n : 'sagaru',
         hr : 60,
-        sbp : 100
+        sbp : 100,
+        shv : 0 
     }   
 });
 
@@ -58,6 +65,9 @@ function exec(){
     var result = sagaru.hshockIndex();
     // ractiveの変数reにresultを代入
     r.set('re',r.get('n') + 'さんのショックインデックス値は' +  result);
+
+    var value = sagaru.shValue();
+    r.set('shv',value);
 }
 
 // イベント設定
