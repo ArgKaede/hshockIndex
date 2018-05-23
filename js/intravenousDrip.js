@@ -13,18 +13,18 @@ var intravenousDrip = /** @class */ (function () {
         this.child = this.infusion / this.time * 60;
     }
     intravenousDrip.prototype.idAdult = function () {
-        return Math.round(this.adult);
+        return Math.floor(this.adult);
     };
     intravenousDrip.prototype.idAdultS = function () {
         var a = this.adult / 60;
-        return Math.round(a) * 3;
+        return Math.floor(a * 3);
     };
     intravenousDrip.prototype.idChild = function () {
-        return Math.round(this.child);
+        return Math.floor(this.child);
     };
     intravenousDrip.prototype.idChildS = function () {
         var b = this.child / 60;
-        return Math.round(b) * 3;
+        return Math.floor(b * 3);
     };
     return intravenousDrip;
 }());
