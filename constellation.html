@@ -3,26 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="stylesheet" type="text/css" href="css/constellation/style.css">
         <title>星座</title>       
     </head>
     <body>
+    <div id ='content'>
 
-        <!-- Ractive -->
-        <section id ='containar'></section>
-        <script type='text/ractive' id ='template'>
-            <h1>星座</h1>
-            <p>誕生日を入力して下さい。</p>
-            <p>月：<input type ='number' value = '{{m}}' on-keydown="enter"></p>
-            <p>日：<input type ='number' value = '{{d}}' on-keydown="enter"></p>
-            <button on-click='health'>星座を調べる</button>
-            <p>{{re}}</p>
+            <!-- Ractive -->
+            <section id ='containar'></section>
+            <script type='text/ractive' id ='template'>
+                <h1>星座</h1>
+                <p>誕生日を入力して下さい♪</p>
+                <div id = 'month'>
+                    <p>月<input type ='number' value = '{{m}}' on-keydown="enter"></p>
+                </div><!-- month -->
+                <div id = 'day'>
+                    <p>日<input type ='number' value = '{{d}}' on-keydown="enter"></p>
+                </div><!-- day -->
+                <button on-click='health'>星座を調べる</button>
+                <p>{{re}}</p>
 
-        </script>
-        <!-- Ractive -->
+            </script>
+            <!-- Ractive -->
 
-        <script src="js/ractive.js"></script>
-        <script type="text/javascript" src="js/constellation.js"></script>
-       
+            <script src="js/ractive.js"></script>
+            <script type="text/javascript" src="js/constellation.js"></script>
+
+    </div><!-- content -->
     </body>
 </html>
