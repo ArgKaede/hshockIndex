@@ -1,3 +1,5 @@
+
+
 button{
     background-color: transparent;
     border: none;
@@ -7,35 +9,44 @@ button{
     appearance: none;
 }
 
-#content {
-    margin : 10px ;
-    padding :  10px 15px ;
-    background-color : rgb(26, 46, 68) ;
 
-    section {
+#content {
+
+    header {
+        padding : 0 10 px ;
+        background-color : rgb(26, 46, 68) ;
+        height : 50ppx ;
         h1 {
+            font-size : 20px ;
             color : rgb(255, 255, 255) ;
         }
-        p {
-            color : #FFF ;
-        }
-        input {
-            margin : 0 0 0 5px ;
-            width : 50px ;
-            height : 20px ;
-        }
-        #month {
+    }
+    #main {
+
+        section {
+
             p {
-                color : red ;
+                color : rgb(26, 46, 68) ;
+            }
+            input {
+                margin : 0 0 0 5px ;
+                width : 50px ;
+                height : 20px ;
+            }
+            #month {
+                p {
+                    color :rgb(26, 46, 68) ;
+                }
+            }
+            button {
+                background-color : rgb(26, 46, 68) ;
+                color : #FFF ;
+                font-size : 20px ;
+                width : 200px ;
+                height : 50px ;
             }
         }
-        button {
-            background-color : #FFF ;
-            color : rgb(26, 46, 68) ;
-            font-size : 20px ;
-            width : 200px ;
-            height : 50px ;
-        }
+            
     }
 
 }

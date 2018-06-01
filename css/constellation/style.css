@@ -6,25 +6,26 @@ button {
   padding: 0;
   appearance: none; }
 
-#content {
-  margin: 10px;
-  padding: 10px 15px;
-  background-color: #1a2e44; }
-  #content section h1 {
-    color: white; }
-  #content section p {
-    color: #FFF; }
-  #content section input {
-    margin: 0 0 0 5px;
-    width: 50px;
-    height: 20px; }
-  #content section #month p {
-    color: red; }
-  #content section button {
-    background-color: #FFF;
-    color: #1a2e44;
+#content header {
+  padding: 0 10 px;
+  background-color: #1a2e44;
+  height: 50ppx; }
+  #content header h1 {
     font-size: 20px;
-    width: 200px;
-    height: 50px; }
+    color: white; }
+#content #main section p {
+  color: #1a2e44; }
+#content #main section input {
+  margin: 0 0 0 5px;
+  width: 50px;
+  height: 20px; }
+#content #main section #month p {
+  color: #1a2e44; }
+#content #main section button {
+  background-color: #1a2e44;
+  color: #FFF;
+  font-size: 20px;
+  width: 200px;
+  height: 50px; }
 
 /*# sourceMappingURL=style.css.map */

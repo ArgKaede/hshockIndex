@@ -3,17 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/constellation/style.css">
         <title>星座</title>       
     </head>
     <body>
     <div id ='content'>
+        <header>
+            <h1>星座</h1>
+        </header>
+
+        <div id = 'main'>
+
+            <p>誕生日を入力してください</p>
 
             <!-- Ractive -->
             <section id ='containar'></section>
             <script type='text/ractive' id ='template'>
-                <h1>星座</h1>
-                <p>誕生日を入力して下さい♪</p>
                 <div id = 'month'>
                     <p>月<input type ='number' value = '{{m}}' on-keydown="enter"></p>
                 </div><!-- month -->
@@ -28,6 +34,8 @@
 
             <script src="js/ractive.js"></script>
             <script type="text/javascript" src="js/constellation.js"></script>
+
+        </div><!-- main -->
 
     </div><!-- content -->
     </body>

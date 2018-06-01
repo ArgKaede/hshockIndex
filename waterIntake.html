@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>1日に必要な水分量</title>       
+    </head>
+    <body>
+        <!-- Ractive -->
+        <section id ='containar'></section>
+        <script type='text/ractive' id ='template'>
+            <h1>1日に必要な水分量</h1>
+            <p>体重：<input type ='number' value = '{{kg}}' on-keydown="enter"></p>
+            <button on-click='health'>計算</button>
+            <p>{{re}}</p>
+
+        </script>
+        <!-- Ractive -->
+
+        <script src="js/ractive.js"></script>
+        <script type="text/javascript" src="js/waterIntake.js"></script>
+       
+    </body>
+</html>
