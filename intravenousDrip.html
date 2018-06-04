@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>点滴の滴下数計算</title>       
     </head>
-    <body>
 
+    <body>
         <!-- Ractive -->
         <section id ='containar'></section>
         <script type='text/ractive' id ='template'>
@@ -19,7 +19,7 @@
             <p>かかる時間</p>
             <p><input type ='number' value = '{{m}}' on-keydown="enter">分</p>
 
-            <button on-click='health'>点滴の滴下数を調べる</button>
+            <button on-click='button'>点滴の滴下数を調べる</button>
 
             <p>※小数点以下を切り捨てて表示します。</p>
 
@@ -32,7 +32,7 @@
             <p>{{reChildS}}</p>
 
         </script>
-        <!-- Ractive -->
+        <!-- /Ractive -->
 
         <script src="js/ractive.js"></script>
         <script type="text/javascript" src="js/intravenousDrip.js"></script>

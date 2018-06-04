@@ -9,7 +9,7 @@ declare var Ractive;
 // 分と時間をプル選択できるようにする
 // r.set内を改行できる？？
 
-
+// classの指定
 class intravenousDrip{
     infusion : number ;
     time : number ;
@@ -22,37 +22,35 @@ class intravenousDrip{
         this.child = this.infusion / this.time * 60 ; 
     }
     
-
-
+    // 大人の滴下数(１分あたり)
     idAdult(){
         return Math.floor(this.adult) ;
     }
-
+    // 大人の滴下数(3秒あたり)
     idAdultS(){
         var a = this.adult / 60 ;
         return Math.floor(a * 3) ;
     }
-
+    // 大人の滴下数(素の計算結果)
     idAdultD(){
         return this.adult ;
     }
-
+    // 子供の滴下数(１分あたり)
     idChild(){
         return Math.floor(this.child) ;
     }
-
+    // 子供の滴下数(3秒あたり)
     idChildS(){
         var b = this.child / 60 ;
         return Math.floor(b * 3) ;
     }
-
+    // 子供の滴下数(素の計算結果)
     idChildD(){
         return this.child ;
     }
 }
 
-
-
+// Ractive
 var r = new Ractive({
     el : '#containar' ,
     template : '#template' ,
@@ -82,10 +80,9 @@ r.on({
     enter : function(e:any){
         if(e.event.keyCode == 13){
         exec();
-        }
-        
+        }        
     },
-    health : function(){
+    button : function(){
         exec();
     }
 })

@@ -5,6 +5,7 @@
 // 結果を表示する際、小数点以下を切り捨て
 // 分と時間をプル選択できるようにする
 // r.set内を改行できる？？
+// classの指定
 var intravenousDrip = /** @class */ (function () {
     function intravenousDrip(infusion, time) {
         this.infusion = infusion;
@@ -12,28 +13,35 @@ var intravenousDrip = /** @class */ (function () {
         this.adult = this.infusion / this.time * 20;
         this.child = this.infusion / this.time * 60;
     }
+    // 大人の滴下数(１分あたり)
     intravenousDrip.prototype.idAdult = function () {
         return Math.floor(this.adult);
     };
+    // 大人の滴下数(3秒あたり)
     intravenousDrip.prototype.idAdultS = function () {
         var a = this.adult / 60;
         return Math.floor(a * 3);
     };
+    // 大人の滴下数(素の計算結果)
     intravenousDrip.prototype.idAdultD = function () {
         return this.adult;
     };
+    // 子供の滴下数(１分あたり)
     intravenousDrip.prototype.idChild = function () {
         return Math.floor(this.child);
     };
+    // 子供の滴下数(3秒あたり)
     intravenousDrip.prototype.idChildS = function () {
         var b = this.child / 60;
         return Math.floor(b * 3);
     };
+    // 子供の滴下数(素の計算結果)
     intravenousDrip.prototype.idChildD = function () {
         return this.child;
     };
     return intravenousDrip;
 }());
+// Ractive
 var r = new Ractive({
     el: '#containar',
     template: '#template',
@@ -63,7 +71,7 @@ r.on({
             exec();
         }
     },
-    health: function () {
+    button: function () {
         exec();
     }
 });
