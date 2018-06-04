@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>ショックインデックス計測</title>       
+    </head>
+    <body>
+
+        <!-- Ractive -->
+        <section id ='containar'></section>
+        <script type='text/ractive' id ='template'>
+            <h1>体液量</h1>
+            <p>体重：<input type ='number' value = '{{kg}}' on-keydown="enter">kg</p>
+            <button on-click='button'>計算</button>
+            <p>成人の体液量　：{{reAdult}}</p>
+            <p>高齢者の体液量：{{reOld}}</p>
+        </script>
+        <!-- Ractive -->
+
+        <script src="js/ractive.js"></script>
+        <script type="text/javascript" src="js/bodyFluidVolume.js"></script>
+       
+    </body>
+</html>
