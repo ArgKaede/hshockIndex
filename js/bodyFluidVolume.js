@@ -1,6 +1,11 @@
 /// <reference path="./ractive.d.ts" />
 // 成人　： 体重(kg)* 0.6 = 体液量(mL)
 // 高齢者： 体重(kg)* 0.5 = 体液量(mL)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js');
+    });
+}
 var bodyFluidVolume = /** @class */ (function () {
     function bodyFluidVolume(weight) {
         this.weight = weight;

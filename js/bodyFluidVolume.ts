@@ -5,6 +5,11 @@ declare var Ractive;
 // 高齢者： 体重(kg)* 0.5 = 体液量(mL)
 
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js');
+    });
+  }
 
 class bodyFluidVolume{
     weight : number ;
