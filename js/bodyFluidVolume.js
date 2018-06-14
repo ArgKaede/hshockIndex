@@ -3,7 +3,7 @@
 // 高齢者： 体重(kg)* 0.5 = 体液量(mL)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./js/sw.js');
+        navigator.serviceWorker.register('./js/sw.js', { scope: "/hshockIndex/" });
     });
 }
 var bodyFluidVolume = /** @class */ (function () {
